@@ -1,2 +1,41 @@
 # Credenciales de Google Cloud (no subir a Git!)
 sre-infrastructure-exercise-418eaaa0aa76.json
+
+# Credenciales de Google Cloud
+*.json
+*.key
+*.pem
+
+# Directorios ocultos
+.terraform/
+.terraform.lock.hcl
+.terraform/
+.terraform.providers/
+.terraform/modules/
+.idea/
+.vscode/
+.env/
+.DS_Store
+
+# Archivos de estado/autogenerados de Terraform
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+*.tfplan
+*.log
+
+# Archivos de Ansible
+*.retry
+
+# Entornos virtuales Python
+venv/
+__pycache__/
+
+# Node.js
+node_modules/
+npm-debug.log
+
+# Editor/IDE específico
+*.swp
+*.swo
+*~
