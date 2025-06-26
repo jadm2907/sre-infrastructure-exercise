@@ -1,0 +1,27 @@
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "sre-infrastructure-exercise",
+      "source_image_family": "debian-12",
+      "zone": "us-central1-a",
+      "image_name": "sre-webapp-{{timestamp}}",
+      "image_family": "sre-webapp",
+      "ssh_username": "debian"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo apt-get update",
+        "sudo apt-get install -y python3"
+      ]
+    },
+    {
+      "type": "ansible",
+      "playbook_file": "../ansible/webapp.yml",
+      "extra_arguments": ["--extra-vars", "ansible_python_interpreter=/usr/bin/python3"]
+    }
+  ]
+}

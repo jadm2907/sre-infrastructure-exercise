@@ -1,0 +1,5 @@
+---
+all:
+  hosts:
+    web_instances:
+      ansible_host: "<instance-ip-from-terraform>"
